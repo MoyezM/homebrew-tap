@@ -3,21 +3,21 @@
 class Gitter < Formula
   desc "Git TUI for staging, review, and stacked branches"
   homepage "https://github.com/MoyezM/gitter"
-  version "0.0.4"
+  version "0.0.5"
 
   # Binary-only: gitter needs a custom OxCaml compiler plus preview packages,
   # so users can never build from source. No bottle block — these tarballs
   # already are the prebuilt artifacts.
   on_macos do
     on_arm do
-      url "https://github.com/MoyezM/gitter/releases/download/v0.0.4/gitter-v0.0.4-macos-arm64.tar.gz"
-      sha256 "07126091b7e8fde72102f4cbdd08c63a8d562f90828397f8ca57be353b5ddf2e"
+      url "https://github.com/MoyezM/gitter/releases/download/v0.0.5/gitter-v0.0.5-macos-arm64.tar.gz"
+      sha256 "66b4ea905011f3a8d203ddda20a1936544ffa1f22fa97818a71e2d155b9ef146"
     end
 
-    # No Intel artifact exists yet. When gitter-v0.0.4-macos-x86_64.tar.gz
+    # No Intel artifact exists yet. When gitter-v0.0.5-macos-x86_64.tar.gz
     # ships, uncomment and teach update-tap.sh a @SHA_X86_64@ placeholder.
     # on_intel do
-    #   url "https://github.com/MoyezM/gitter/releases/download/v0.0.4/gitter-v0.0.4-macos-x86_64.tar.gz"
+    #   url "https://github.com/MoyezM/gitter/releases/download/v0.0.5/gitter-v0.0.5-macos-x86_64.tar.gz"
     #   sha256 "@SHA_X86_64@"
     # end
   end
@@ -27,6 +27,6 @@ class Gitter < Formula
   end
 
   test do
-    assert_match "0.0.4", shell_output("#{bin}/gitter -version")
+    assert_match "0.0.5", shell_output("#{bin}/gitter -version")
   end
 end
